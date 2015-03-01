@@ -68,7 +68,7 @@
     </GenFiles>
     <SignalListFile>Documentation\IOM_B_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>MetrowerksHCS08CC</DestinationCompiler>
-    <ProjectModificationStamp>24</ProjectModificationStamp>
+    <ProjectModificationStamp>25</ProjectModificationStamp>
   </Options>
   <CpuID_4>
     <Generated>true</Generated>
