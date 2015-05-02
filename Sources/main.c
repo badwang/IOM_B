@@ -34,6 +34,7 @@
 #include "Din.h"
 #include "Din2.h"
 #include "Timer.h"
+#include "WDog.h"
 /* Include shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -137,6 +138,7 @@ void main(void)
   //Start main loop...
   
   for(;;){
+	  (void) WDog_Disable();
 	  
 	  CheckTime=0;
 	  while(RX_Frame()!=ERR_OK){
@@ -219,6 +221,10 @@ void main(void)
 			  }
 			  TX_Report(TXData, 8);							//Send MAC address.
 		  }
+	  }else if(UART_RXBuf[9]==0xEE){
+		  //CMD 0xEE, reset.
+		  (void) WDog_Enable();
+		  for(;;);
 	  }else {
 		  Cpu_Delay100US(10);
 	  }

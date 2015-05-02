@@ -38,6 +38,7 @@
 #include "Din.h"
 #include "Din2.h"
 #include "Timer.h"
+#include "WDog.h"
 
 
 void AS1_OnError(void);
